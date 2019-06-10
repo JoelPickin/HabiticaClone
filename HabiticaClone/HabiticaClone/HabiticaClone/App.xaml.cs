@@ -4,6 +4,10 @@ using HabiticaClone.ViewModels;
 using HabiticaClone.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using HabiticaClone.Views.Navigation;
+using HabiticaClone.Views.Habits;
+using HabiticaClone.ViewModels.Navigation;
+using HabiticaClone.ViewModels.Habits;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace HabiticaClone
