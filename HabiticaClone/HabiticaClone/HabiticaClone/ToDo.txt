@@ -9,14 +9,13 @@
 	- Health
 	- Experience
 	- Currency
-
-* Mid 
-	- Habits
-		> Custom List Item
-	- Dailies
-	- To-Dos
-	- Rewards
 		
 
 * Bottom 
 	- Navigation Bar
+
+
+* Account/Person
+	> Account Object
+	> Health Bar
+	> Experience 

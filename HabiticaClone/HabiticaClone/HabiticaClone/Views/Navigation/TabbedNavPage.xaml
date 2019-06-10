@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+            xmlns:habits="clr-namespace:HabiticaClone.Views.Habits"
+            prism:ViewModelLocator.AutowireViewModel="True"
+            x:Class="HabiticaClone.Views.Navigation.TabbedNavPage">
+    
+    <NavigationPage Title="Habits">
+        <x:Arguments>
+            <habits:HabitsPage/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Dailies">
+        <x:Arguments>
+       
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="To-Dos">
+        <x:Arguments>
+
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Rewards">
+        <x:Arguments>
+
+        </x:Arguments>
+    </NavigationPage>
+        
+</TabbedPage>
