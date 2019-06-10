@@ -1,0 +1,22 @@
+﻿* Top Nav 
+	- Master Detail
+	- Filters
+	- Three Dots/Refresh
+	
+* Character
+	- Character Image
+	- Level
+	- Health
+	- Experience
+	- Currency
+
+* Mid 
+	- Habits
+		> Custom List Item
+	- Dailies
+	- To-Dos
+	- Rewards
+		
+
+* Bottom 
+	- Navigation Bar
