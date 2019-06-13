@@ -4,5 +4,35 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HabiticaClone.Views.Avatar.AvatarPage">
-  
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--Image & Level-->
+        <StackLayout Grid.Row="0" Grid.RowSpan="4" Grid.Column="0">
+            <Image/>
+            <StackLayout>
+                <Label Text="Lvl"/>
+                <Label Text="{Binding Level}"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Image/>
+            <StackLayout>
+                <ProgressBar/>
+                <Label Text=""/>
+                <Label/>
+            </StackLayout>
+
+        </StackLayout>
+    </Grid>
 </ContentPage>
