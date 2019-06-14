@@ -9,7 +9,7 @@ using HabiticaClone.Views.Habits;
 using HabiticaClone.ViewModels.Navigation;
 using HabiticaClone.ViewModels.Habits;
 using HabiticaClone.Views.Avatar;
-using HabiticaClone.ViewModels.Avatar;
+using HabiticaClone.ViewModels.Avatars;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace HabiticaClone
@@ -29,7 +29,7 @@ namespace HabiticaClone
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("TabbedNavPage/MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

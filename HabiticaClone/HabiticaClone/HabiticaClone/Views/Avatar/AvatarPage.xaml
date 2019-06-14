@@ -26,13 +26,29 @@
         </StackLayout>
 
         <StackLayout Orientation="Horizontal">
-            <Image/>
-            <StackLayout>
-                <ProgressBar/>
-                <Label Text=""/>
-                <Label/>
+            <Image VerticalOptions="Start"/>
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ProgressBar HorizontalOptions="StartAndExpand"/>
+                <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="Start">
+                    <Label Text="{Binding CurrentHealth}"/>
+                    <Label Text="/"/>
+                    <Label Text="{Binding MaxHealth}"/>
+                </StackLayout>
+                <Label Text="Health" HorizontalOptions="End"/>
             </StackLayout>
+        </StackLayout>
 
+        <StackLayout Orientation="Horizontal">
+            <Image VerticalOptions="Start"/>
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ProgressBar HorizontalOptions="StartAndExpand"/>
+                <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="Start">
+                    <Label Text="{Binding CurrentExperience}"/>
+                    <Label Text="/"/>
+                    <Label Text="{Binding MaxExperience}"/>
+                </StackLayout>
+                <Label Text="Health" HorizontalOptions="End"/>
+            </StackLayout>
         </StackLayout>
     </Grid>
 </ContentPage>
