@@ -6,7 +6,8 @@
              x:Class="HabiticaClone.Views.Habits.HabitsPage">
 
     <ListView VerticalOptions="FillAndExpand"
-              HorizontalOptions="FillAndExpand">
+              HorizontalOptions="FillAndExpand"
+              ItemsSource="{Binding HabitList}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
@@ -17,12 +18,12 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         
-                        <Button Grid.Column="0" Text="+" BackgroundColor="Yellow"/>
+                        <Button Grid.Column="0" Text="+" BackgroundColor="Yellow" VerticalOptions="FillAndExpand"/>
                         <StackLayout Grid.Column="1" Padding="5" BackgroundColor="White">
-                            <Label/>
-                            <Label/>
+                            <Label Text="{Binding TaskTitle}"/>
+                            <Label Text="{Binding Notes}"/>
                         </StackLayout>
-                        <Button Grid.Column="2" Text="-" BackgroundColor="Yellow"/>
+                        <Button Grid.Column="2" Text="-" BackgroundColor="Yellow" VerticalOptions="FillAndExpand"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

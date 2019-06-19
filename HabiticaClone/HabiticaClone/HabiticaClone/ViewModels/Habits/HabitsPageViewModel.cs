@@ -21,7 +21,24 @@ namespace HabiticaClone.ViewModels.Habits
         public HabitsPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-
+            HabitList = new ObservableCollection<Habit>
+            {
+                new Habit
+                {
+                    TaskTitle = "This is a test",
+                    Notes = "These are some test notes added ot this"
+                },
+                new Habit
+                {
+                    TaskTitle = "This is a test",
+                    Notes = "These are some test notes added ot this"
+                },
+                new Habit
+                {
+                    TaskTitle = "This is a test",
+                    Notes = "These are some test notes added ot this"
+                }
+            };
         }
 
           public override void OnNavigatedFrom(INavigationParameters parameters)

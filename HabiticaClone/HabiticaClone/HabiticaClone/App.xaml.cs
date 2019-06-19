@@ -29,7 +29,7 @@ namespace HabiticaClone
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("TabbedNavPage/MainPage");
+            await NavigationService.NavigateAsync("HabitsPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
