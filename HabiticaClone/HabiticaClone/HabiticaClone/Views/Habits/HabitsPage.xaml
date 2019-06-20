@@ -2,32 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:controls="clr-namespace:HabiticaClone.Views.Controls"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HabiticaClone.Views.Habits.HabitsPage">
 
     <ListView VerticalOptions="FillAndExpand"
               HorizontalOptions="FillAndExpand"
-              ItemsSource="{Binding HabitList}">
+              ItemsSource="{Binding HabitList}"
+              HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="6*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        
-                        <Button Grid.Column="0" Text="+" BackgroundColor="Yellow" VerticalOptions="FillAndExpand"/>
-                        <StackLayout Grid.Column="1" Padding="5" BackgroundColor="White">
-                            <Label Text="{Binding TaskTitle}"/>
-                            <Label Text="{Binding Notes}"/>
-                        </StackLayout>
-                        <Button Grid.Column="2" Text="-" BackgroundColor="Yellow" VerticalOptions="FillAndExpand"/>
-                    </Grid>
-                </ViewCell>
+                <controls:HabitListViewCell/>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-    
 </ContentPage>

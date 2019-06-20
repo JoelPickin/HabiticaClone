@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HabiticaClone.Views.Controls.HabitListViewCell">
+    <ViewCell.View>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Text="+" BackgroundColor="Orange" VerticalOptions="FillAndExpand"/>
+            <StackLayout Grid.Column="1" Padding="5" BackgroundColor="White">
+                <Label Text="{Binding TaskTitle}" TextColor="Black" HorizontalOptions="Start"/>
+                <Label Text="{Binding Notes}" TextColor="LightGray"/>
+            </StackLayout>
+            <Button Grid.Column="2" Text="-" BackgroundColor="Yellow" VerticalOptions="FillAndExpand"/>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>
