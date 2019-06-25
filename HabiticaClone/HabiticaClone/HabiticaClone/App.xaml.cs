@@ -29,7 +29,7 @@ namespace HabiticaClone
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("HabitsPage");
+            await NavigationService.NavigateAsync("MasterDetailNavPage/HabitsPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -39,7 +39,7 @@ namespace HabiticaClone
             containerRegistry.RegisterForNavigation<TabbedNavPage, TabbedNavPageViewModel>();
             containerRegistry.RegisterForNavigation<HabitsPage, HabitsPageViewModel>();
             containerRegistry.RegisterForNavigation<HabitCreationPage, HabitCreationPageViewModel>();
-            containerRegistry.RegisterForNavigation<AvatarPage, AvatarPageViewModel>();
+            containerRegistry.RegisterForNavigation<MasterDetailNavPage, MasterDetailNavPageViewModel>();
         }
     }
 }

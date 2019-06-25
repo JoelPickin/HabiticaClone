@@ -3,10 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:controls="clr-namespace:HabiticaClone.Views.Controls"
+             xmlns:avatar="clr-namespace:HabiticaClone.Views.Avatar"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HabiticaClone.Views.Habits.HabitsPage">
-
-    <ListView VerticalOptions="FillAndExpand"
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3.3*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <avatar:AvatarPage Grid.Row="0"/>
+        <!--<ListView VerticalOptions="FillAndExpand"
               HorizontalOptions="FillAndExpand"
               ItemsSource="{Binding HabitList}"
               HasUnevenRows="True">
@@ -15,5 +21,6 @@
                 <controls:HabitListViewCell/>
             </DataTemplate>
         </ListView.ItemTemplate>
-    </ListView>
+    </ListView>-->
+    </Grid>
 </ContentPage>

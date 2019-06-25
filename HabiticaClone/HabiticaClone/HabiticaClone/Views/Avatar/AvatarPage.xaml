@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HabiticaClone.Views.Avatar.AvatarPage">
+    <ContentView.Content>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -14,18 +15,26 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <!--Image & Level-->
-        <StackLayout Grid.Row="0" Grid.RowSpan="4" Grid.Column="0">
-            <Image/>
-            <StackLayout>
+            <BoxView VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="LightPink" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3"/>
+                <!--<Image VerticalOptions="FillAndExpand"/>-->
+            <StackLayout Orientation="Horizontal" Grid.Row="3">
                 <Label Text="Lvl"/>
                 <Label Text="{Binding Level}"/>
             </StackLayout>
-        </StackLayout>
 
-        <StackLayout Orientation="Horizontal">
+
+        <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="6">
             <Image VerticalOptions="Start"/>
             <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <ProgressBar HorizontalOptions="StartAndExpand"/>
@@ -38,7 +47,7 @@
             </StackLayout>
         </StackLayout>
 
-        <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="6"/>
             <Image VerticalOptions="Start"/>
             <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <ProgressBar HorizontalOptions="StartAndExpand"/>
@@ -49,6 +58,6 @@
                 </StackLayout>
                 <Label Text="Health" HorizontalOptions="End"/>
             </StackLayout>
-        </StackLayout>
-    </Grid>
-</ContentPage>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
