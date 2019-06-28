@@ -9,7 +9,7 @@ using HabiticaClone.Views.Habits;
 using HabiticaClone.ViewModels.Navigation;
 using HabiticaClone.ViewModels.Habits;
 using HabiticaClone.Views.Avatar;
-using HabiticaClone.ViewModels.Avatars;
+using HabiticaClone.ViewModels.Avatar;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace HabiticaClone
@@ -40,6 +40,7 @@ namespace HabiticaClone
             containerRegistry.RegisterForNavigation<HabitsPage, HabitsPageViewModel>();
             containerRegistry.RegisterForNavigation<HabitCreationPage, HabitCreationPageViewModel>();
             containerRegistry.RegisterForNavigation<MasterDetailNavPage, MasterDetailNavPageViewModel>();
+            containerRegistry.RegisterForNavigation<AvatarPage, AvatarPageViewModel>();
         }
     }
 }

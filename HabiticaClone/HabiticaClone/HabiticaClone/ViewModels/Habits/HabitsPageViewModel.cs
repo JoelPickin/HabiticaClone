@@ -1,4 +1,5 @@
-﻿using HabiticaClone.Models.Habits;
+﻿using HabiticaClone.Models.Avatars;
+using HabiticaClone.Models.Habits;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -17,7 +18,9 @@ namespace HabiticaClone.ViewModels.Habits
         public ICommand GoToHabitDetailCommand {get; set;}
         public ICommand GoToHabitCreationCommand {get; set;}
         public ObservableCollection<Habit> HabitList {get; set;}
-        
+        public AvatarModel Avatar { get; set; }
+
+
         public HabitsPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
@@ -38,6 +41,18 @@ namespace HabiticaClone.ViewModels.Habits
                     TaskTitle = "This is a test",
                     Notes = "These are some test notes added ot this"
                 }
+            };
+
+            Avatar = new AvatarModel
+            {
+                UserName = "Joel Pickin",
+                Level = 1,
+                MaxHealth = 50,
+                CurrentHealth = 29,
+                MaxExperience = 150,
+                CurrentExperience = 12,
+                GoldOwned = 2.02,
+                GemsOwned = 0
             };
         }
 

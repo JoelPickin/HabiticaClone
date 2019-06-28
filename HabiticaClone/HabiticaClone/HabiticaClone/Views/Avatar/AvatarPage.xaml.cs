@@ -2,7 +2,7 @@
 
 namespace HabiticaClone.Views.Avatar
 {
-    public partial class AvatarPage : ContentView
+    public partial class AvatarPage : ContentPage
     {
         public AvatarPage()
         {

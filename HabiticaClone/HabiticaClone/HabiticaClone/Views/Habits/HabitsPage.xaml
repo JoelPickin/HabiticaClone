@@ -11,8 +11,9 @@
             <RowDefinition Height="3.3*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <avatar:AvatarPage Grid.Row="0"/>
-        <!--<ListView VerticalOptions="FillAndExpand"
+        <!--<avatar:AvatarPage Grid.Row="0"/>-->
+        <Label Text="{Binding Avatar.UserName}" TextColor="Green" Grid.Row="1"/>
+        <!--<ListView VerticalOptions="FillAndExpand" Grid.Row="1"
               HorizontalOptions="FillAndExpand"
               ItemsSource="{Binding HabitList}"
               HasUnevenRows="True">
