@@ -40,7 +40,7 @@ namespace HabiticaClone
             containerRegistry.RegisterForNavigation<HabitsPage, HabitsPageViewModel>();
             containerRegistry.RegisterForNavigation<HabitCreationPage, HabitCreationPageViewModel>();
             containerRegistry.RegisterForNavigation<MasterDetailNavPage, MasterDetailNavPageViewModel>();
-            containerRegistry.RegisterForNavigation<AvatarPage, AvatarPageViewModel>();
+           
         }
     }
 }

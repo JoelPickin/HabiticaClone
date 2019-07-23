@@ -11,6 +11,7 @@
             <RowDefinition Height="3.3*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
+        <avatar:AvatarPage Grid.Row="0"/>
         <!--<avatar:AvatarPage Grid.Row="0"/>-->
         <Label Text="{Binding Avatar.UserName}" TextColor="Green" Grid.Row="1"/>
         <!--<ListView VerticalOptions="FillAndExpand" Grid.Row="1"

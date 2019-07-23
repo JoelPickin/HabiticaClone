@@ -14,9 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\Avatar\AvatarPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
+    <Compile Update="Views\Avatar\AvatarPage.xaml.cs">
+      <DependentUpon>AvatarPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Views\Controls\HabitListViewCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

@@ -8,12 +8,10 @@ using System.Linq;
 
 namespace HabiticaClone.ViewModels.Avatar
 {
-    public class AvatarPageViewModel : ViewModelBase
+    public class AvatarPageViewModel : BindableBase
     {
         public AvatarModel Avatar { get; set; }
-
-        public AvatarPageViewModel(INavigationService navigationService)
-            : base(navigationService)
+        public AvatarPageViewModel()
         {
             Avatar = new AvatarModel
             {
@@ -26,16 +24,6 @@ namespace HabiticaClone.ViewModels.Avatar
                 GoldOwned = 2.02,
                 GemsOwned = 0
             };
-        }
-
-        public override void OnNavigatingTo(INavigationParameters parameters)
-        {
-            base.OnNavigatingTo(parameters);
-        }
-
-        public override void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            base.OnNavigatedFrom(parameters);
         }
     }
 }

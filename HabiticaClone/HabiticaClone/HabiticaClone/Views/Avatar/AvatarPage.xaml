@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HabiticaClone.Views.Avatar.AvatarPage">
-    <Grid VerticalOptions="Center" Padding="10, 10, 10, 10" Grid.Row="0" BackgroundColor="#432973">
+    <Grid VerticalOptions="Fill" Padding="10, 10, 10, 10" Grid.Row="0" BackgroundColor="#432973">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -15,8 +15,8 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -32,36 +32,38 @@
         <BoxView Color="Red" Grid.Row="0" Grid.Column="4"/>
 
         <StackLayout Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="4">
-            <Label Text="Test" TextColor="Green"/>
-            <Label Text="{Binding UserName}" TextColor="BlueViolet"/>
             <ProgressBar ProgressColor="Red" Progress="1" VerticalOptions="Center"/>
-            <Label Text="{Binding CurrentHealth}" HorizontalOptions="Start" TextColor="#bea8fd"/>
-            <Label Text="{Binding UserName}" HorizontalOptions="Start" TextColor="#bea8fd"/>
-            <Label Text="{Binding MaxHealth}" HorizontalOptions="Start" TextColor="#bea8fd"/>
+            <StackLayout Orientation="Horizontal">
+            <Label Text="{Binding Avatar.CurrentHealth}" HorizontalOptions="Start" TextColor="#bea8fd"/>
+            <Label Text="/" HorizontalOptions="Start" TextColor="#bea8fd"/>
+            <Label Text="{Binding Avatar.MaxHealth}" HorizontalOptions="Start" TextColor="#bea8fd"/>
+            </StackLayout>
         </StackLayout>
 
         <BoxView Color="Gold"  Grid.Row="1" Grid.Column="4"/>
 
         <StackLayout Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="4" VerticalOptions="End">
             <ProgressBar ProgressColor="Gold" Progress="1" VerticalOptions="Center" HeightRequest="10"/>
-            <Label Text="{Binding CurrentExperience}" HorizontalOptions="Start" TextColor="#bea8fd"/>
-            <Label Text="/" HorizontalOptions="Start" TextColor="#bea8fd"/>
-            <Label Text="{Binding MaxExperience}" HorizontalOptions="Start" TextColor="#bea8fd"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding Avatar.CurrentExperience}" HorizontalOptions="Start" TextColor="#bea8fd"/>
+                <Label Text="/" HorizontalOptions="Start" TextColor="#bea8fd"/>
+                <Label Text="{Binding Avatar.MaxExperience}" HorizontalOptions="Start" TextColor="#bea8fd"/>
+            </StackLayout>
         </StackLayout>
 
-        <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="3" Grid.Column="0">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="3" Grid.Column="0">
             <Label Text="Lvl" TextColor="#bea8fd"/>
-            <Label Text="{Binding Level}" TextColor="#bea8fd"/>
+            <Label Text="{Binding Avatar.Level}" TextColor="#bea8fd"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="7">
             <BoxView Color="Gold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="10" HeightRequest="10"/>
-            <Label Text="0" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Gold"/>
+            <Label Text="{Binding Avatar.GoldOwned}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Gold"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="8">
             <BoxView Color="Green" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="10" HeightRequest="10"/>
-            <Label Text="0" HorizontalOptions="End" VerticalOptions="Center" TextColor="Green"/>
+            <Label Text="{Binding Avatar.GemsOwned}" HorizontalOptions="End" VerticalOptions="Center" TextColor="Green"/>
         </StackLayout>
     </Grid>
-</ContentPage>
+</ContentView>
