@@ -31,23 +31,25 @@
 
         <BoxView Color="Red" Grid.Row="0" Grid.Column="4"/>
 
-        <StackLayout Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="4">
+        <StackLayout Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="4" VerticalOptions="Start" Spacing="0">
             <ProgressBar ProgressColor="Red" Progress="1" VerticalOptions="Center"/>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" Spacing="0">
             <Label Text="{Binding Avatar.CurrentHealth}" HorizontalOptions="Start" TextColor="#bea8fd"/>
             <Label Text="/" HorizontalOptions="Start" TextColor="#bea8fd"/>
             <Label Text="{Binding Avatar.MaxHealth}" HorizontalOptions="Start" TextColor="#bea8fd"/>
+            <Label Text="Health" HorizontalOptions="EndAndExpand" TextColor="#bea8fd"/>
             </StackLayout>
         </StackLayout>
 
         <BoxView Color="Gold"  Grid.Row="1" Grid.Column="4"/>
 
-        <StackLayout Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="4" VerticalOptions="End">
-            <ProgressBar ProgressColor="Gold" Progress="1" VerticalOptions="Center" HeightRequest="10"/>
-            <StackLayout Orientation="Horizontal">
+        <StackLayout Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="4" VerticalOptions="Start" Spacing="0">
+            <ProgressBar ProgressColor="Gold" Progress="1" VerticalOptions="Center"/>
+            <StackLayout Orientation="Horizontal" Spacing="0">
                 <Label Text="{Binding Avatar.CurrentExperience}" HorizontalOptions="Start" TextColor="#bea8fd"/>
                 <Label Text="/" HorizontalOptions="Start" TextColor="#bea8fd"/>
                 <Label Text="{Binding Avatar.MaxExperience}" HorizontalOptions="Start" TextColor="#bea8fd"/>
+                <Label Text="Experience" HorizontalOptions="EndAndExpand" TextColor="#bea8fd"/>
             </StackLayout>
         </StackLayout>
 
