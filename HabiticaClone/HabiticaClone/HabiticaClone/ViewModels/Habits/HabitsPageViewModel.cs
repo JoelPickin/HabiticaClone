@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace HabiticaClone.ViewModels.Habits
 {
@@ -16,7 +17,10 @@ namespace HabiticaClone.ViewModels.Habits
         public ICommand PositiveCommand {get; set;}
         public ICommand NegativeCommand {get; set;}
         public ICommand GoToHabitDetailCommand {get; set;}
-        public ICommand GoToHabitCreationCommand {get; set;}
+
+        private Command _goToHabitCreationCommand;
+        public ICommand GoToHabitCreationCommand => _goToHabitCreationCommand = _goToHabitCreationCommand ?? new Command(GoToHabitCreation);
+
         public ObservableCollection<Habit> HabitList {get; set;}
         public AvatarModel Avatar { get; set; }
 
@@ -64,6 +68,11 @@ namespace HabiticaClone.ViewModels.Habits
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
+        }
+
+        private async void GoToHabitCreation()
+        {
+           await NavigationService.NavigateAsync("HabitCreationPage");
         }
     }
 }

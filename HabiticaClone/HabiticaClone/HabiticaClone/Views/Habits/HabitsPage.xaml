@@ -23,5 +23,14 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+        
+      <Button Text="+" 
+              CornerRadius="2" 
+              BackgroundColor="Purple" 
+              TextColor="White" 
+              Grid.Row="1" 
+              VerticalOptions="End" 
+              HorizontalOptions="Center"
+              Command="{Binding GoToHabitCreationCommand}"/>
     </Grid>
 </ContentPage>
