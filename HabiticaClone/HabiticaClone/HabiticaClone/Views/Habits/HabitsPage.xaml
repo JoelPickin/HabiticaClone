@@ -5,7 +5,8 @@
              xmlns:controls="clr-namespace:HabiticaClone.Views.Controls"
              xmlns:avatar="clr-namespace:HabiticaClone.Views.Avatar"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="HabiticaClone.Views.Habits.HabitsPage">
+             x:Class="HabiticaClone.Views.Habits.HabitsPage"
+             Title="Joel Pickin">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3.3*"/>

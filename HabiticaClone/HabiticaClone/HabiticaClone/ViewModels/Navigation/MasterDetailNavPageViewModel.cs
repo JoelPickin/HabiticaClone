@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HabiticaClone.ViewModels
+namespace HabiticaClone.ViewModels.Navigation
 {
     public class MasterDetailNavPageViewModel : BindableBase
     {
