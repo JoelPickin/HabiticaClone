@@ -3,8 +3,69 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="HabiticaClone.Views.Habits.HabitCreationPage">
-    <StackLayout>
+             x:Class="HabiticaClone.Views.Habits.HabitCreationPage"
+             Title="Create Habit">
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         
-    </StackLayout>
+        <StackLayout Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" BackgroundColor="Purple" Padding="10, 0, 10, 10">
+            <Entry Placeholder="Task Title" BackgroundColor="Lavender"/>
+            <Entry Placeholder="Notes" BackgroundColor="Lavender"/>
+        </StackLayout>
+        
+            <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout>
+                    <Button Text="+" BackgroundColor="Purple" TextColor="White" HorizontalOptions="Center" WidthRequest="5" HeightRequest="5"/>
+                    <Label Text="Positive" TextColor="Purple" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout>
+                    <Button Text="-" BackgroundColor="Purple" TextColor="White" HorizontalOptions="Center" WidthRequest="5" HeightRequest="5"/>
+                    <Label Text="Negative" TextColor="Purple" HorizontalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+
+                <StackLayout Grid.Row="3" Grid.Column="0">
+                    <Label Text="Difficulty"/>
+                    <Button Text="o" BackgroundColor="LightGray" TextColor="Gray"/>
+                    <Label Text="Trivial" TextColor="Gray"/>
+                </StackLayout>
+                <StackLayout Grid.Row="3" Grid.Column="1">
+                    <Button Text="oo" BackgroundColor="LightGray" TextColor="Gray"/>
+                    <Label Text="Easy" TextColor="Gray"/>
+                </StackLayout>
+                <StackLayout Grid.Row="3" Grid.Column="2">
+                    <Button Text="ooo" BackgroundColor="LightGray" TextColor="Gray"/>
+                    <Label Text="Medium" TextColor="Gray"/>
+                </StackLayout>
+                <StackLayout Grid.Row="3" Grid.Column="3">
+                    <Button Text="oooo" BackgroundColor="LightGray" TextColor="Gray"/>
+                    <Label Text="Hard" TextColor="Gray"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="4" Grid.Column="0">
+                    <Label Text="Reset Streak"/>
+                    <Button Text="Daily" BackgroundColor="LightGray" TextColor="Gray"/>
+                </StackLayout>
+                <StackLayout Grid.Row="4" Grid.Column="1">
+                    <Button Text="Weekly" BackgroundColor="LightGray" TextColor="Gray"/>
+                </StackLayout>
+                <StackLayout Grid.Row="4" Grid.Column="2">
+                    <Button Text="Monthly" BackgroundColor="LightGray" TextColor="Gray"/>
+                </StackLayout>
+
+                <Label Text="Tags" Grid.Row="5" Grid.Column="0"/>
+    </Grid>
 </ContentPage>
