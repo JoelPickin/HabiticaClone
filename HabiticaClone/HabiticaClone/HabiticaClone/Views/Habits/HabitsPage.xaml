@@ -27,7 +27,7 @@
         
       <Button Text="+" 
               CornerRadius="2" 
-              BackgroundColor="Purple" 
+              BackgroundColor="{StaticResource MainColorPurple}" 
               TextColor="White" 
               Grid.Row="1" 
               VerticalOptions="End" 

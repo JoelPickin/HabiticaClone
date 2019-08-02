@@ -4,7 +4,7 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HabiticaClone.Views.Avatar.AvatarPage">
-    <Grid VerticalOptions="Fill" Padding="10, 0, 10, 10" Grid.Row="0" BackgroundColor="#432973">
+    <Grid VerticalOptions="Fill" Padding="10, 0, 10, 10" Grid.Row="0" BackgroundColor="{StaticResource MainColorPurple}">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
