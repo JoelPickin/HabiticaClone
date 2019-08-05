@@ -5,6 +5,10 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HabiticaClone.Views.Habits.HabitCreationPage"
              Title="Create Habit">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Create" Order="Primary" Priority="0" Text="Create" Command="{Binding CreateCommand}"/>
+    </ContentPage.ToolbarItems>
+    
     <Grid BackgroundColor="White">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -22,8 +26,8 @@
         </Grid.ColumnDefinitions>
 
         <StackLayout Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="4" BackgroundColor="{StaticResource MainColorPurple}" Padding="20, 20, 20, 30" Spacing="5">
-            <Entry Placeholder="Task Title" BackgroundColor="Lavender"/>
-            <Entry Placeholder="Notes" BackgroundColor="Lavender" VerticalOptions="FillAndExpand"/>
+            <Entry Placeholder="Task Title" BackgroundColor="Lavender" Text="{Binding TaskTitle}"/>
+            <Entry Placeholder="Notes" BackgroundColor="Lavender" VerticalOptions="FillAndExpand" Text="{Binding Notes}"/>
         </StackLayout>
         
         <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalOptions="Center">
@@ -56,12 +60,12 @@
         </StackLayout>
         
         <!--<Label Text="Reset Streak" VerticalOptions="Start"/>-->
-        <StackLayout Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" VerticalOptions="FillAndExpand">
+        <StackLayout Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" Padding="10, 0, 10, 0">
             <Button Text="Daily" BackgroundColor="LightGray" TextColor="Gray" HorizontalOptions="StartAndExpand" VerticalOptions="Center" HeightRequest="40"/>
             <Button Text="Weekly" BackgroundColor="LightGray" TextColor="Gray" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="40"/>
             <Button Text="Monthly" BackgroundColor="LightGray" TextColor="Gray" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="40"/>
         </StackLayout>
 
-        <Label Text="Tags" Grid.Row="5" Grid.Column="0"/>
+        <Label Text="Tags" Grid.Row="5" Grid.Column="0" Margin="10, 0, 10, 0"/>
     </Grid>
 </ContentPage>
