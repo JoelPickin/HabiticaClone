@@ -9,5 +9,6 @@
         <Setter Property="BarBackgroundColor" Value="#432973"/>
         <Setter Property="BarTextColor" Value="White"/>
     </Style>
+    <Color x:Key="MainColorWhite">#FFFFFF</Color>
     <Color x:Key="MainColorPurple">#432973</Color>
 </ResourceDictionary>
