@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Renderers\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Controls\" />
   </ItemGroup>

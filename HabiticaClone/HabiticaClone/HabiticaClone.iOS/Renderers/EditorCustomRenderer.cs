@@ -11,12 +11,12 @@ using Xamarin.Forms;
 using Xamarin.Forms.Material.iOS;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(Xamarin.Forms.Entry), typeof(CustomEntryRenderer), new[] { typeof(CustomVisual) })]
+[assembly: ExportRenderer(typeof(Xamarin.Forms.Editor), typeof(EditorCustomRenderer), new[] { typeof(CustomVisual) })]
 namespace HabiticaClone.iOS.Renderers
 {
-    public class CustomEntryRenderer : MaterialEntryRenderer
+    public class EditorCustomRenderer : MaterialEditorRenderer
     {
-        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
         {
             base.OnElementChanged(e);
 

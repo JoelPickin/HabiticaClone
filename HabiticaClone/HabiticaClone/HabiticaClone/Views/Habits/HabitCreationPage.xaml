@@ -33,12 +33,12 @@
         
         <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalOptions="Center">
             <StackLayout>
-                <Button Text="+" BackgroundColor="{StaticResource MainColorPurple}" TextColor="White" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40"/>
-                <Label Text="Positive" TextColor="White" HorizontalOptions="Start"/>
+                <Button x:Name="PositiveButton" Text="+" BackgroundColor="Transparent" TextColor="LightGray" BorderColor="LightGray" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40" Clicked="PositiveButton_Clicked"/>
+                <Label x:Name="PositiveLabel" Text="Positive" TextColor="LightGray" HorizontalOptions="Start" />
             </StackLayout>
             <StackLayout>
-                <Button Text="-" BackgroundColor="{StaticResource MainColorPurple}" TextColor="White" HorizontalOptions="End" WidthRequest="40" HeightRequest="40"/>
-                <Label Text="Negative" TextColor="White" HorizontalOptions="End"/>
+                <Button x:Name="NegativeButton" Text="-" BackgroundColor="Transparent" TextColor="LightGray" BorderColor="LightGray" HorizontalOptions="End" WidthRequest="40" HeightRequest="40" Clicked="NegativeButton_Clicked"/>
+                <Label x:Name="NegativeLabel" Text="Negative" TextColor="LightGray" HorizontalOptions="End"/>
             </StackLayout>
         </StackLayout>
 
@@ -61,7 +61,7 @@
         </StackLayout>
         
         <!--<Label Text="Reset Streak" VerticalOptions="Start"/>-->
-        <StackLayout Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand" Padding="10, 0, 10, 0">
+        <StackLayout Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10, 0, 10, 0">
             <Button Text="Daily" BackgroundColor="LightGray" TextColor="Gray" HorizontalOptions="StartAndExpand" VerticalOptions="Center" HeightRequest="40"/>
             <Button Text="Weekly" BackgroundColor="LightGray" TextColor="Gray" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="40"/>
             <Button Text="Monthly" BackgroundColor="LightGray" TextColor="Gray" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="40"/>
