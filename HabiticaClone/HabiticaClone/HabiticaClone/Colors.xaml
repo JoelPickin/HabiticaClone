@@ -11,4 +11,5 @@
     </Style>
     <Color x:Key="MainColorWhite">#FFFFFF</Color>
     <Color x:Key="MainColorPurple">#432973</Color>
+    <Color x:Key="MainColorLightGray">#F5F5F5</Color>
 </ResourceDictionary>

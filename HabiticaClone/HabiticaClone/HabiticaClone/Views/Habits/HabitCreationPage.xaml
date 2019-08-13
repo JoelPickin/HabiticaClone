@@ -33,40 +33,40 @@
         
         <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalOptions="Center">
             <StackLayout>
-                <Button x:Name="PositiveButton" Text="+" BackgroundColor="Transparent" TextColor="LightGray" BorderColor="LightGray" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40" Clicked="PositiveButton_Clicked"/>
-                <Label x:Name="PositiveLabel" Text="Positive" TextColor="LightGray" HorizontalOptions="Start" />
+                <Button x:Name="PositiveBtn" Text="+" BackgroundColor="Transparent" TextColor="Gray" BorderColor="Gray" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40" Clicked="PositiveBtn_Clicked"/>
+                <Label x:Name="PositiveLabel" Text="Positive" TextColor="Gray" HorizontalOptions="Start" />
             </StackLayout>
             <StackLayout>
-                <Button x:Name="NegativeButton" Text="-" BackgroundColor="Transparent" TextColor="LightGray" BorderColor="LightGray" HorizontalOptions="End" WidthRequest="40" HeightRequest="40" Clicked="NegativeButton_Clicked"/>
-                <Label x:Name="NegativeLabel" Text="Negative" TextColor="LightGray" HorizontalOptions="End"/>
+                <Button x:Name="NegativeBtn" Text="-" BackgroundColor="Transparent" TextColor="Gray" BorderColor="Gray" HorizontalOptions="End" WidthRequest="40" HeightRequest="40" Clicked="NegativeBtn_Clicked"/>
+                <Label x:Name="NegativeLabel" Text="Negative" TextColor="Gray" HorizontalOptions="End"/>
             </StackLayout>
         </StackLayout>
 
         <!--<Label Text="Difficulty" Grid.Row="3" Grid.Column="0" VerticalOptions="Start"/>-->
         <StackLayout Grid.Row="3" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Button Text="✦" BackgroundColor="LightGray" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70"/>
+            <Button x:Name="TrivialBtn" Text="✦" BackgroundColor="{StaticResource MainColorLightGray}" TextColor="Gray" BorderColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" Clicked="TrivialBtn_Clicked"/>
             <Label Text="Trivial" TextColor="Gray" HorizontalOptions="Center"/>
         </StackLayout>
         <StackLayout Grid.Row="3" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Button Text="✦✦" BackgroundColor="LightGray" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70"/>
+            <Button x:Name="EasyBtn" Text="✦✦" BackgroundColor="{StaticResource MainColorLightGray}" TextColor="Gray" BorderColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" Clicked="EasyBtn_Clicked"/>
             <Label Text="Easy" TextColor="Gray" HorizontalOptions="Center"/>
         </StackLayout>
         <StackLayout Grid.Row="3" Grid.Column="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Button Text="✦✦✦" BackgroundColor="LightGray" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70"/>
+            <Button x:Name="MediumBtn" Text="✦✦✦" BackgroundColor="{StaticResource MainColorLightGray}" TextColor="Gray" BorderColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" Clicked="MediumBtn_Clicked"/>
             <Label Text="Medium" TextColor="Gray" HorizontalOptions="Center"/>
         </StackLayout>
         <StackLayout Grid.Row="3" Grid.Column="3" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Button Text="✦✦✦✦" BackgroundColor="LightGray" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70"/>
+            <Button x:Name="HardBtn" Text="✦✦✦✦" BackgroundColor="{StaticResource MainColorLightGray}" TextColor="Gray" BorderColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" Clicked="HardBtn_Clicked"/>
             <Label Text="Hard" TextColor="Gray" HorizontalOptions="Center"/>
         </StackLayout>
         
         <!--<Label Text="Reset Streak" VerticalOptions="Start"/>-->
         <StackLayout Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10, 0, 10, 0">
-            <Button Text="Daily" BackgroundColor="LightGray" TextColor="Gray" HorizontalOptions="StartAndExpand" VerticalOptions="Center" HeightRequest="40"/>
-            <Button Text="Weekly" BackgroundColor="LightGray" TextColor="Gray" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="40"/>
-            <Button Text="Monthly" BackgroundColor="LightGray" TextColor="Gray" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="40"/>
+            <Button x:Name="DailyBtn" Text="Daily" BackgroundColor="{StaticResource MainColorLightGray}" TextColor="Gray" BorderColor="Gray" HorizontalOptions="StartAndExpand" VerticalOptions="Center" HeightRequest="40" Clicked="DailyBtn_Clicked"/>
+            <Button x:Name="WeeklyBtn" Text="Weekly" BackgroundColor="{StaticResource MainColorLightGray}" TextColor="Gray" BorderColor="Gray" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="40" Clicked="WeeklyBtn_Clicked"/>
+            <Button x:Name="MonthlyBtn" Text="Monthly" BackgroundColor="{StaticResource MainColorLightGray}" TextColor="Gray" BorderColor="Gray" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="40" Clicked="MonthlyBtn_Clicked"/>
         </StackLayout>
 
-        <Label Text="Tags" Grid.Row="5" Grid.Column="0" Margin="10, 0, 10, 0"/>
+        <Label Text="Tags" TextColor="Gray" Grid.Row="5" Grid.Column="0" Margin="10, 0, 10, 0"/>
     </Grid>
 </ContentPage>
