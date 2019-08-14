@@ -11,15 +11,17 @@ namespace HabiticaClone.ViewModels.Habits
 {
     public class HabitCreationPageViewModel : ViewModelBase
     {
-        public ICommand CreateCommand {get; set;}
+        private DelegateCommand _createCommand;
+        //public ICommand CreateCommand => _createCommand = _createCommand ?? new DelegateCommand()
         public ICommand SaveCommand {get; set;}
         public ICommand DeleteCommand {get; set;}
         public string TaskTitle {get; set;}
         public string Notes {get; set;}
-        public bool PositiveSelected {get; set;}
-        public bool NegativeSelected {get; set;}
-        public Difficulty SelectedDifficulty {get; set;}
-        public ResetStreak SelectedResetStreak {get; set;}
+        public bool PositiveSelected {get; set;} = true;
+        public bool NegativeSelected {get; set;} = true;
+        public Difficulty SelectedDifficulty {get; set;} = Difficulty.Easy;
+        public ResetStreak SelectedResetStreak {get; set;} = ResetStreak.Daily;
+
         public int PositiveStreak {get; set;}
         public int NegativeStreak {get; set;}
 
