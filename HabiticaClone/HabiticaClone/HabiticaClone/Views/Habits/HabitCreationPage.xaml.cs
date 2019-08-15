@@ -41,7 +41,7 @@ namespace HabiticaClone.Views.Habits
                 PositiveBtn.BackgroundColor = Color.Transparent;
                 PositiveBtn.TextColor = Color.Gray;
                 PositiveBtn.BorderColor = Color.Gray;
-                PositiveLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                PositiveLabel.TextColor = Color.Gray;
             }
 
             ViewModel.PositiveSelected = IsPositiveSelected;
@@ -64,7 +64,7 @@ namespace HabiticaClone.Views.Habits
                 NegativeBtn.BackgroundColor = Color.Transparent;
                 NegativeBtn.TextColor = Color.Gray;
                 NegativeBtn.BorderColor = Color.Gray;
-                NegativeLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                NegativeLabel.TextColor = Color.Gray;
             }
 
             ViewModel.NegativeSelected = IsNegativeSelected;
@@ -84,19 +84,19 @@ namespace HabiticaClone.Views.Habits
                 EasyBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 EasyBtn.TextColor = Color.Gray;
                 EasyBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                EasyLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                EasyLabel.TextColor = Color.Gray;
 
                 IsMediumSelected = false;
                 MediumBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 MediumBtn.TextColor = Color.Gray;
                 MediumBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                MediumLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                MediumLabel.TextColor = Color.Gray;
 
                 IsHardSelected = false;
                 HardBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 HardBtn.TextColor = Color.Gray;
                 HardBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                HardLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                HardLabel.TextColor = Color.Gray;
 
                 ViewModel.SelectedDifficulty = Enums.Difficulty.Trivial;
             }
@@ -106,7 +106,7 @@ namespace HabiticaClone.Views.Habits
                 TrivialBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 TrivialBtn.TextColor = Color.Gray;
                 TrivialBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                TrivialLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                TrivialLabel.TextColor = Color.Gray;
             }
         }
 
@@ -124,19 +124,19 @@ namespace HabiticaClone.Views.Habits
                 TrivialBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 TrivialBtn.TextColor = Color.Gray;
                 TrivialBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                TrivialLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                TrivialLabel.TextColor = Color.Gray;
 
                 IsMediumSelected = false;
                 MediumBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 MediumBtn.TextColor = Color.Gray;
                 MediumBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                MediumLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                MediumLabel.TextColor = Color.Gray;
 
                 IsHardSelected = false;
                 HardBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 HardBtn.TextColor = Color.Gray;
                 HardBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                HardLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                HardLabel.TextColor = Color.Gray;
 
                 ViewModel.SelectedDifficulty = Enums.Difficulty.Easy;
             }
@@ -146,7 +146,7 @@ namespace HabiticaClone.Views.Habits
                 EasyBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 EasyBtn.TextColor = Color.Gray;
                 EasyBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                EasyLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                EasyLabel.TextColor = Color.Gray;
             }
         }
 
@@ -158,25 +158,25 @@ namespace HabiticaClone.Views.Habits
                 MediumBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorPurple"];
                 MediumBtn.TextColor = Color.White;
                 MediumBtn.BorderColor = (Color)Application.Current.Resources["MainColorPurple"];
-                MediumLabel.TextColor = (Color)Application.Current.Resources["MainColorPurple"];
+                MediumLabel.TextColor = Color.Gray;
 
                 IsTrivialSelected = false;
                 TrivialBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 TrivialBtn.TextColor = Color.Gray;
                 TrivialBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                TrivialLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                TrivialLabel.TextColor = Color.Gray;
 
                 IsEasySelected = false;
                 EasyBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 EasyBtn.TextColor = Color.Gray;
                 EasyBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                EasyLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                EasyLabel.TextColor = Color.Gray;
 
                 IsHardSelected = false;
                 HardBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 HardBtn.TextColor = Color.Gray;
                 HardBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                HardLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                HardLabel.TextColor = Color.Gray;
 
                 ViewModel.SelectedDifficulty = Enums.Difficulty.Medium;
             }
@@ -186,7 +186,7 @@ namespace HabiticaClone.Views.Habits
                 MediumBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 MediumBtn.TextColor = Color.Gray;
                 MediumBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                MediumLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                MediumLabel.TextColor = Color.Gray;
             }
         }
 
@@ -204,19 +204,19 @@ namespace HabiticaClone.Views.Habits
                 TrivialBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 TrivialBtn.TextColor = Color.Gray;
                 TrivialBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                TrivialLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                TrivialLabel.TextColor = Color.Gray;
 
                 IsEasySelected = false;
                 EasyBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 EasyBtn.TextColor = Color.Gray;
                 EasyBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                EasyLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                EasyLabel.TextColor = Color.Gray;
 
                 IsMediumSelected = false;
                 MediumBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 MediumBtn.TextColor = Color.Gray;
                 MediumBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                MediumLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                MediumLabel.TextColor = Color.Gray;
 
                 ViewModel.SelectedDifficulty = Enums.Difficulty.Hard;
             }
@@ -226,7 +226,7 @@ namespace HabiticaClone.Views.Habits
                 HardBtn.BackgroundColor = (Color)Application.Current.Resources["MainColorLightGray"];
                 HardBtn.TextColor = Color.Gray;
                 HardBtn.BorderColor = (Color)Application.Current.Resources["MainColorLightGray"];
-                HardLabel.TextColor = (Color)Application.Current.Resources["MainColorLightGray"];
+                HardLabel.TextColor = Color.Gray;
             }
         }
 

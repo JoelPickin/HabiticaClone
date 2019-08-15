@@ -5,6 +5,7 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace HabiticaClone.ViewModels.Habits
@@ -12,7 +13,7 @@ namespace HabiticaClone.ViewModels.Habits
     public class HabitCreationPageViewModel : ViewModelBase
     {
         private DelegateCommand _createCommand;
-        //public ICommand CreateCommand => _createCommand = _createCommand ?? new DelegateCommand()
+        public ICommand CreateCommand => _createCommand = _createCommand ?? new DelegateCommand(CreateHabit);
         public ICommand SaveCommand {get; set;}
         public ICommand DeleteCommand {get; set;}
         public string TaskTitle {get; set;}
@@ -39,6 +40,11 @@ namespace HabiticaClone.ViewModels.Habits
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
+        }
+
+        public void CreateHabit()
+        {
+
         }
     }
 }
