@@ -108,7 +108,9 @@
       <Name>HabiticaClone</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\hamburger.png" />
   </ItemGroup>
