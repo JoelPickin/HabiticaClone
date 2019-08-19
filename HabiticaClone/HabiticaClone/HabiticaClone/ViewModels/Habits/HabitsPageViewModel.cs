@@ -1,12 +1,16 @@
-﻿using HabiticaClone.Models.Avatars;
+﻿using HabiticaClone.Events;
+using HabiticaClone.Models.Avatars;
 using HabiticaClone.Models.Habits;
+using HabiticaClone.Services.Interfaces;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -20,14 +24,17 @@ namespace HabiticaClone.ViewModels.Habits
 
         private Command _goToHabitCreationCommand;
         public ICommand GoToHabitCreationCommand => _goToHabitCreationCommand = _goToHabitCreationCommand ?? new Command(GoToHabitCreation);
+        //private IEventSubscriber _eventSubscriber;
 
         public ObservableCollection<Habit> HabitList {get; set;}
         public AvatarModel Avatar { get; set; }
 
 
-        public HabitsPageViewModel(INavigationService navigationService)
-            : base(navigationService)
+        public HabitsPageViewModel(INavigationService navigationService/*, IEventAggregator eventAggregator, IEventSubscriber eventSubscriber*/)
+            : base(navigationService/*, eventAggregator*/)
         {
+            //_eventSubscriber = eventSubscriber;
+
             HabitList = new ObservableCollection<Habit>
             {
                 new Habit
@@ -58,9 +65,18 @@ namespace HabiticaClone.ViewModels.Habits
                 GoldOwned = 2.02,
                 GemsOwned = 0
             };
+
+            //AddEventSubscriptions(eventSubscriber);
         }
 
-          public override void OnNavigatedFrom(INavigationParameters parameters)
+        //protected override void AddEventSubscriptions(IEventSubscriber subscriber)
+        //{
+        //    base.AddEventSubscriptions(subscriber);
+
+        //    //subscriber.Subscribe<HabitCreatedEvent, Habit>(async (habit) => await UpdateHabitListAsync(habit));
+        //}
+
+        public override void OnNavigatedFrom(INavigationParameters parameters)
         {
             base.OnNavigatedFrom(parameters);
         }
@@ -74,5 +90,11 @@ namespace HabiticaClone.ViewModels.Habits
         {
            await NavigationService.NavigateAsync("HabitCreationPage");
         }
+
+        private async Task UpdateHabitListAsync(Habit habit)
+        {
+            HabitList.Add(habit);
+        }
+
     }
 }
