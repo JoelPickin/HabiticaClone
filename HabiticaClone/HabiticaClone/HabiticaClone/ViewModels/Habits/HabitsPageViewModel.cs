@@ -24,16 +24,17 @@ namespace HabiticaClone.ViewModels.Habits
 
         private Command _goToHabitCreationCommand;
         public ICommand GoToHabitCreationCommand => _goToHabitCreationCommand = _goToHabitCreationCommand ?? new Command(GoToHabitCreation);
-        //private IEventSubscriber _eventSubscriber;
+        private IEventAggregator _eventAggregator;
 
         public ObservableCollection<Habit> HabitList {get; set;}
         public AvatarModel Avatar { get; set; }
 
 
-        public HabitsPageViewModel(INavigationService navigationService/*, IEventAggregator eventAggregator, IEventSubscriber eventSubscriber*/)
-            : base(navigationService/*, eventAggregator*/)
+        public HabitsPageViewModel(INavigationService navigationService, IEventAggregator eventAggregator)
+            : base(navigationService)
         {
-            //_eventSubscriber = eventSubscriber;
+            _eventAggregator = eventAggregator;
+            AddEventSubscriptions();
 
             HabitList = new ObservableCollection<Habit>
             {
@@ -64,17 +65,13 @@ namespace HabiticaClone.ViewModels.Habits
                 CurrentExperience = 12,
                 GoldOwned = 2.02,
                 GemsOwned = 0
-            };
-
-            //AddEventSubscriptions(eventSubscriber);
+            };         
         }
 
-        //protected override void AddEventSubscriptions(IEventSubscriber subscriber)
-        //{
-        //    base.AddEventSubscriptions(subscriber);
-
-        //    //subscriber.Subscribe<HabitCreatedEvent, Habit>(async (habit) => await UpdateHabitListAsync(habit));
-        //}
+        protected override void AddEventSubscriptions()
+        {
+            _eventAggregator.GetEvent<HabitCreatedEvent>().Subscribe(async (habit) => await UpdateHabitListAsync(habit));
+        }
 
         public override void OnNavigatedFrom(INavigationParameters parameters)
         {
@@ -94,6 +91,7 @@ namespace HabiticaClone.ViewModels.Habits
         private async Task UpdateHabitListAsync(Habit habit)
         {
             HabitList.Add(habit);
+            await NavigationService.GoBackAsync();
         }
 
     }

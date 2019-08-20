@@ -8,14 +8,15 @@
              x:Class="HabiticaClone.Views.Habits.HabitsPage"
              Title="Joel Pickin"
              Visual="Material">
-    <Grid>
+    <Grid RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="3.3*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <avatar:AvatarPage Grid.Row="0"/>
       
-        <ListView VerticalOptions="FillAndExpand" Grid.Row="1"
+        <ListView VerticalOptions="FillAndExpand" 
+                  Grid.Row="1"  
               HorizontalOptions="FillAndExpand"
               ItemsSource="{Binding HabitList}"
               HasUnevenRows="True">

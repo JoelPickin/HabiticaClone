@@ -20,8 +20,7 @@ namespace HabiticaClone.ViewModels.Habits
         public ICommand CreateCommand => _createCommand = _createCommand ?? new DelegateCommand(CompleteHabit);
         public ICommand SaveCommand {get; set;}
         public ICommand DeleteCommand {get; set;}
-        //private IEventAggregator _eventAggregator;
-        //private IEventSubscriber _eventSubscriber;
+        private IEventAggregator _eventAggregator;
 
         public string TaskTitle {get; set;}
         public string Notes {get; set;}
@@ -33,11 +32,10 @@ namespace HabiticaClone.ViewModels.Habits
         public int PositiveStreak {get; set;}
         public int NegativeStreak {get; set;}
 
-        public HabitCreationPageViewModel(INavigationService navigationService/*, IEventAggregator eventAggregator, IEventSubscriber eventSubscriber*/)
-            : base(navigationService/*, eventAggregator*/)
+        public HabitCreationPageViewModel(INavigationService navigationService, IEventAggregator eventAggregator /*IEventSubscriber eventSubscriber*/)
+            : base(navigationService)
         {
-            //_eventAggregator = eventAggregator;
-            //_eventSubscriber = eventSubscriber;
+            _eventAggregator = eventAggregator;
         }
 
         public override void OnNavigatedFrom(INavigationParameters parameters)
@@ -56,7 +54,7 @@ namespace HabiticaClone.ViewModels.Habits
 
             if (habit == null) return;
 
-            //_eventAggregator.GetEvent<HabitCreatedEvent>().Publish(habit);
+            _eventAggregator.GetEvent<HabitCreatedEvent>().Publish(habit);
         }
 
         private Habit CreateHabit()

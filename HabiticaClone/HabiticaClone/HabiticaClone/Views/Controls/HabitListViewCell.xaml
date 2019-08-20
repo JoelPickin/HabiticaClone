@@ -6,19 +6,19 @@
              mc:Ignorable="d"
              x:Class="HabiticaClone.Views.Controls.HabitListViewCell">
     <ViewCell.View>
-        <Grid>
+        <Grid ColumnSpacing="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="6*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Text="+" BackgroundColor="Orange" VerticalOptions="FillAndExpand"/>
+            <Button Grid.Column="0" Text="+" BackgroundColor="#FFB347" VerticalOptions="FillAndExpand" CornerRadius="0" FontSize="Large"/>
             <StackLayout Grid.Column="1" Padding="5" BackgroundColor="White">
-                <Label Text="{Binding TaskTitle}" TextColor="Black" HorizontalOptions="Start"/>
-                <Label Text="{Binding Notes}" TextColor="LightGray"/>
+                <Label Text="{Binding TaskTitle}" TextColor="Black" HorizontalOptions="Start" FontSize="Subtitle"/>
+                <Label Text="{Binding Notes}" TextColor="LightGray" FontSize="Small"/>
             </StackLayout>
-            <Button Grid.Column="2" Text="-" BackgroundColor="Yellow" VerticalOptions="FillAndExpand"/>
+            <Button Grid.Column="2" Text="-" BackgroundColor="#FFB347" VerticalOptions="FillAndExpand" TextColor="White" CornerRadius="0" FontSize="Large"/>
         </Grid>
     </ViewCell.View>
 </ViewCell>
