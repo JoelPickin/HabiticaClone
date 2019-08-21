@@ -20,14 +20,28 @@ namespace HabiticaClone.ViewModels.Habits
     {
         public ICommand PositiveCommand {get; set;}
         public ICommand NegativeCommand {get; set;}
+        private Command _itemSelectedCommand { get; set; }
+        public ICommand ItemSelectedCommand => _itemSelectedCommand = _itemSelectedCommand ?? new Command(ItemSelected);
         public ICommand GoToHabitDetailCommand {get; set;}
-
         private Command _goToHabitCreationCommand;
         public ICommand GoToHabitCreationCommand => _goToHabitCreationCommand = _goToHabitCreationCommand ?? new Command(GoToHabitCreation);
         private IEventAggregator _eventAggregator;
 
         public ObservableCollection<Habit> HabitList {get; set;}
         public AvatarModel Avatar { get; set; }
+
+        private Habit _selectedItem;
+        public Habit SelectedItem 
+        { 
+            get
+            {
+                return _selectedItem;
+            }
+            set
+            {
+                _selectedItem = value;
+            }
+        }
 
 
         public HabitsPageViewModel(INavigationService navigationService, IEventAggregator eventAggregator)
@@ -81,6 +95,15 @@ namespace HabiticaClone.ViewModels.Habits
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
+        }
+
+        private void ItemSelected()
+        {
+            if (SelectedItem != null && SelectedItem is Habit)
+            {
+                NavigationParameters navParams = new NavigationParameters();
+                navParams.Add("SelectedHabit", SelectedItem);
+            }
         }
 
         private async void GoToHabitCreation()
