@@ -1,4 +1,5 @@
-﻿using HabiticaClone.Events;
+﻿using HabiticaClone.Common.Services.Navigation;
+using HabiticaClone.Events;
 using HabiticaClone.Models.Avatars;
 using HabiticaClone.Models.Habits;
 using HabiticaClone.Services.Interfaces;
@@ -95,6 +96,7 @@ namespace HabiticaClone.ViewModels.Habits
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
+
         }
 
         private void ItemSelected()
@@ -102,7 +104,7 @@ namespace HabiticaClone.ViewModels.Habits
             if (SelectedItem != null && SelectedItem is Habit)
             {
                 NavigationParameters navParams = new NavigationParameters();
-                navParams.Add("SelectedHabit", SelectedItem);
+                navParams.Add(NavParams.SelectedItem, SelectedItem);
             }
         }
 
