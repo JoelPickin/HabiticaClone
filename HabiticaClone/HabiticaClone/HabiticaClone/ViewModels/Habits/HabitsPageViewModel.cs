@@ -25,7 +25,7 @@ namespace HabiticaClone.ViewModels.Habits
         public ICommand ItemSelectedCommand => _itemSelectedCommand = _itemSelectedCommand ?? new Command(ItemSelected);
         public ICommand GoToHabitDetailCommand {get; set;}
         private Command _goToHabitCreationCommand;
-        public ICommand GoToHabitCreationCommand => _goToHabitCreationCommand = _goToHabitCreationCommand ?? new Command(GoToHabitCreation);
+        public ICommand GoToHabitCreationCommand => _goToHabitCreationCommand = _goToHabitCreationCommand ?? new Command<NavigationParameters>(async (navParams) => await GoToHabitCreation(navParams));
         private IEventAggregator _eventAggregator;
 
         public ObservableCollection<Habit> HabitList {get; set;}
@@ -88,6 +88,11 @@ namespace HabiticaClone.ViewModels.Habits
             _eventAggregator.GetEvent<HabitCreatedEvent>().Subscribe(async (habit) => await UpdateHabitListAsync(habit));
         }
 
+        public override void OnNavigatingTo(INavigationParameters parameters)
+        {
+            base.OnNavigatingTo(parameters);
+        }
+
         public override void OnNavigatedFrom(INavigationParameters parameters)
         {
             base.OnNavigatedFrom(parameters);
@@ -96,21 +101,22 @@ namespace HabiticaClone.ViewModels.Habits
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
-
         }
 
-        private void ItemSelected()
+        private async void ItemSelected()
         {
             if (SelectedItem != null && SelectedItem is Habit)
             {
                 NavigationParameters navParams = new NavigationParameters();
                 navParams.Add(NavParams.SelectedItem, SelectedItem);
+
+                await GoToHabitCreation(navParams);
             }
         }
 
-        private async void GoToHabitCreation()
+        private async Task GoToHabitCreation(NavigationParameters navParams)
         {
-           await NavigationService.NavigateAsync("HabitCreationPage");
+           await NavigationService.NavigateAsync(NavPages.HabitCreationPage, navParams);
         }
 
         private async Task UpdateHabitListAsync(Habit habit)

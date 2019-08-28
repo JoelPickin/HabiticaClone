@@ -4,4 +4,9 @@
     {
         public const string SelectedItem = "SelectedItem";
     }
+
+    public struct NavPages
+    {
+        public const string HabitCreationPage = "HabitCreationPage";
+    }
 }

@@ -28,8 +28,8 @@
             </DataTemplate>
         </ListView.ItemTemplate>
             <ListView.Behaviors>
-                <behaviors:EventToCommandBehavior EventName="ItemTapped"
-                                                  Command="{Binding ItemTappedCommand}"/>
+                <behaviors:EventToCommandBehavior EventName="ItemSelected"
+                                                  Command="{Binding ItemSelectedCommand}"/>
             </ListView.Behaviors>
         </ListView>
         

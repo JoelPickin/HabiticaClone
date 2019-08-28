@@ -1,4 +1,5 @@
-﻿using HabiticaClone.Enums;
+﻿using HabiticaClone.Common.Services.Navigation;
+using HabiticaClone.Enums;
 using HabiticaClone.Events;
 using HabiticaClone.Models.Habits;
 using HabiticaClone.Services.Interfaces;
@@ -38,14 +39,19 @@ namespace HabiticaClone.ViewModels.Habits
             _eventAggregator = eventAggregator;
         }
 
-        public override void OnNavigatedFrom(INavigationParameters parameters)
+        public override void OnNavigatingTo(INavigationParameters parameters)
         {
-            base.OnNavigatedFrom(parameters);
-        }
+            base.OnNavigatingTo(parameters);
 
-        public override void OnNavigatedTo(INavigationParameters parameters)
-        {
-            base.OnNavigatedTo(parameters);
+            if (parameters.TryGetValue(NavParams.SelectedItem, out Habit SelectedHabit))
+            {
+                TaskTitle = SelectedHabit.TaskTitle;
+                Notes = SelectedHabit.Notes;
+                PositiveSelected = SelectedHabit.PositiveSelected;
+                NegativeSelected = SelectedHabit.NegativeSelected;
+                SelectedDifficulty = SelectedHabit.Difficulty;
+                SelectedResetStreak = SelectedHabit.ResetStreak;
+            }
         }
 
         public void CompleteHabit()
