@@ -7,6 +7,7 @@ using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,8 +66,20 @@ namespace HabiticaClone.ViewModels.Habits
 
         private Habit CreateHabit()
         {
-            var habit = new Habit
+            var realmDb = Realm.GetInstance();
+
+            var habits = realmDb.All<Habit>().ToList();
+
+            var maxHabitId = 0;
+
+            if (habits.Count != 0)
             {
+                maxHabitId = habits.Max(h => h.Id);
+            }
+
+            Habit habit = new Habit()
+            {
+                Id = maxHabitId + 1,
                 TaskTitle = TaskTitle,
                 Notes = Notes,
                 PositiveSelected = PositiveSelected,
@@ -74,6 +87,11 @@ namespace HabiticaClone.ViewModels.Habits
                 Difficulty = SelectedDifficulty,
                 ResetStreak = SelectedResetStreak
             };
+
+            realmDb.Write(() =>
+            {
+                realmDb.Add(habit);
+            });
 
             return habit;
         }

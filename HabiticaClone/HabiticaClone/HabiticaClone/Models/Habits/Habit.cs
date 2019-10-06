@@ -1,12 +1,15 @@
 ﻿using HabiticaClone.Enums;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HabiticaClone.Models.Habits
 {
-    public class Habit : ModelBase
+    public class Habit : RealmObject
     {
+        public int Id { get; set; }
+        public DateTime CreateDate { get; set; }
         public string TaskTitle { get; set; }
         public string Notes { get; set; }
         public bool PositiveSelected { get; set; }
