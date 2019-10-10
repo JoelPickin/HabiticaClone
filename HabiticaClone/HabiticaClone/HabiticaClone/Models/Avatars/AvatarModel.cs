@@ -8,8 +8,8 @@ namespace HabiticaClone.Models.Avatars
     public class AvatarModel : RealmObject
     {
         [PrimaryKey]
-        public Guid Id { get; set; }
-        public DateTime CreateDate { get; set; }
+        public int Id { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
         public string UserName { get; set;}
         public byte AvatarImage { get; set;}
         public long Level { get; set;}

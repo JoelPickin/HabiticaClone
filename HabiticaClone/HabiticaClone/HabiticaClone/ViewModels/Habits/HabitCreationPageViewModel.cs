@@ -10,6 +10,7 @@ using Prism.Navigation;
 using Realms;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -40,9 +41,9 @@ namespace HabiticaClone.ViewModels.Habits
             _eventAggregator = eventAggregator;
         }
 
-        public override void OnNavigatingTo(INavigationParameters parameters)
+        public override void OnNavigatedTo(INavigationParameters parameters)
         {
-            base.OnNavigatingTo(parameters);
+            base.OnNavigatedTo(parameters);
 
             if (parameters.TryGetValue(NavParams.SelectedItem, out Habit SelectedHabit))
             {
@@ -55,14 +56,15 @@ namespace HabiticaClone.ViewModels.Habits
             }
         }
 
-        public void CompleteHabit()
+        public async void CompleteHabit()
         {
             var habit = CreateHabit();
 
             if (habit == null) return;
 
             _eventAggregator.GetEvent<HabitCreatedEvent>().Publish(habit);
-        }
+
+            await NavigationService.GoBackAsync();        }
 
         private Habit CreateHabit()
         {

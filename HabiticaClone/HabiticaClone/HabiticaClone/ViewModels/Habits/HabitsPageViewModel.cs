@@ -7,6 +7,7 @@ using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -88,11 +89,6 @@ namespace HabiticaClone.ViewModels.Habits
             _eventAggregator.GetEvent<HabitCreatedEvent>().Subscribe(async (habit) => await UpdateHabitListAsync(habit));
         }
 
-        public override void OnNavigatingTo(INavigationParameters parameters)
-        {
-            base.OnNavigatingTo(parameters);
-        }
-
         public override void OnNavigatedFrom(INavigationParameters parameters)
         {
             base.OnNavigatedFrom(parameters);
@@ -101,6 +97,10 @@ namespace HabiticaClone.ViewModels.Habits
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
+
+            var realmDb = Realm.GetInstance();
+
+            var habits = realmDb.All<Habit>().ToList();
         }
 
         private async void ItemSelected()

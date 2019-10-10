@@ -9,7 +9,7 @@ using System.Text;
 
 namespace HabiticaClone.ViewModels
 {
-    public class ViewModelBase : BindableBase, INavigationAware, IDestructible
+    public class ViewModelBase : BindableBase, IInitialize, INavigationAware, IDestructible
     {
         protected INavigationService NavigationService { get; private set; }
 
@@ -35,11 +35,6 @@ namespace HabiticaClone.ViewModels
 
         }
 
-        public virtual void OnNavigatingTo(INavigationParameters parameters)
-        {
-
-        }
-
         protected virtual void AddEventSubscriptions()
         {
 
@@ -48,6 +43,10 @@ namespace HabiticaClone.ViewModels
         public virtual void Destroy()
         {
 
+        }
+
+        public void Initialize(INavigationParameters parameters)
+        {
         }
     }
 }
