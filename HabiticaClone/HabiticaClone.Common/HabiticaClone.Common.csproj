@@ -7,7 +7,6 @@
   <ItemGroup>
     <Folder Include="Events\" />
     <Folder Include="Renderers\" />
-    <Folder Include="Services\Interfaces\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Controls\" />
   </ItemGroup>
