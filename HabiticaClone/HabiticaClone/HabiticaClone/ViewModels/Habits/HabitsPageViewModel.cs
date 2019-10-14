@@ -1,4 +1,5 @@
-﻿using HabiticaClone.Common.Services.Navigation;
+﻿using HabiticaClone.Common.Services.Interfaces;
+using HabiticaClone.Common.Services.Navigation;
 using HabiticaClone.Events;
 using HabiticaClone.Models.Avatars;
 using HabiticaClone.Models.Habits;
@@ -28,6 +29,7 @@ namespace HabiticaClone.ViewModels.Habits
         private Command _goToHabitCreationCommand;
         public ICommand GoToHabitCreationCommand => _goToHabitCreationCommand = _goToHabitCreationCommand ?? new Command<NavigationParameters>(async (navParams) => await GoToHabitCreation(navParams));
         private IEventAggregator _eventAggregator;
+        private IConnectionService _connectionService;
 
         public ObservableCollection<Habit> HabitList {get; set;}
         public AvatarModel Avatar { get; set; }
@@ -46,10 +48,12 @@ namespace HabiticaClone.ViewModels.Habits
         }
 
 
-        public HabitsPageViewModel(INavigationService navigationService, IEventAggregator eventAggregator)
+        public HabitsPageViewModel(INavigationService navigationService, IEventAggregator eventAggregator, IConnectionService connectionService)
             : base(navigationService)
         {
             _eventAggregator = eventAggregator;
+            _connectionService = connectionService;
+
             AddEventSubscriptions();
 
             HabitList = new ObservableCollection<Habit>
@@ -100,7 +104,7 @@ namespace HabiticaClone.ViewModels.Habits
 
             var realmDb = Realm.GetInstance();
 
-            var habits = realmDb.All<Habit>().ToList();
+            var habits = realmDb.All<Habit>().ToList();        
         }
 
         private async void ItemSelected()
